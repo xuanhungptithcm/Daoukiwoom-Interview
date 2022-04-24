@@ -1,0 +1,60 @@
+@import "../../../../styles/color";
+.container-menu-header {
+  position: absolute;
+  top: 60px;
+  left: 81px;
+  z-index: 3;
+  width: 90%;
+  transform: translate(-50%, 0);
+  left: 50%;
+}
+.menu-header {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  .logo {
+    svg {
+      display: block;
+      width: 176px;
+      height: 30px;
+    }
+    margin-right: 159px;
+  }
+  .menus {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    list-style-type: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .menu-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:not(:last-child) {
+      padding-right: 72px;
+    }
+    a {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: $COLOR_WHITE;
+      text-decoration: none;
+    }
+    &.active a {
+      color: $COLOR_DARKBLUE;
+      font-weight: 700;
+    }
+    svg {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 12px;
+    }
+  }
+}

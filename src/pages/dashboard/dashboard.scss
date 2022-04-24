@@ -1,0 +1,261 @@
+@import "../../styles/color";
+
+.lading-header {
+  display: flex;
+}
+
+.left-menu {
+  background-color: white;
+  flex-basis: 525px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+h1.title {
+  margin: 0;
+  p {
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 76px;
+    letter-spacing: 0.01em;
+    color: #181949;
+    text-align: left;
+    margin: 0;
+  }
+  p:first-child {
+    margin-bottom: 20px;
+  }
+}
+.right-menu {
+  background-image: url("../../assets/icons/svg/bg-right.svg");
+  width: calc(100vw - 525px);
+  min-height: 750px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  input[type="radio"] {
+    display: none;
+  }
+  #now-checkbox:checked ~ .tab-title label:first-child,
+  #now-checkbox:not(:checked)
+    ~ #future-checkbox:not(:checked)
+    ~ .tab-title
+    label:first-child {
+    opacity: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background-color: $COLOR_LIGHTBLUE;
+    }
+  }
+  #now-checkbox:checked ~ .tab-content .tab:first-child,
+  #now-checkbox:not(:checked)
+    ~ #future-checkbox:not(:checked)
+    ~ .tab-content
+    .tab:first-child {
+    display: flex;
+  }
+  #future-checkbox:checked ~ .tab-title label:last-child {
+    opacity: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background-color: $COLOR_LIGHTBLUE;
+    }
+  }
+  #future-checkbox:checked ~ .tab-content .tab:last-child {
+    display: flex;
+  }
+
+  .tab-title {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 46px;
+    label {
+      cursor: pointer;
+      color: $COLOR_WHITE;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 30px;
+      font-style: normal;
+      display: block;
+      padding: 0 25px;
+      position: relative;
+      opacity: 0.5;
+    }
+  }
+  .grids {
+    display: flex;
+    align-items: flex-start;
+    .grid {
+      display: flex;
+      flex-direction: column;
+      &:not(:last-child) {
+        margin-right: 103px;
+      }
+      .grid-number {
+        color: $COLOR_LIGHTBLUE;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 87px;
+        text-align: center;
+      }
+      .grid-text {
+        color: $COLOR_WHITE;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        text-align: center;
+        word-wrap: break-word;
+        max-width: 138px;
+      }
+    }
+  }
+  .tab {
+    display: none;
+  }
+}
+
+.slogan {
+  background-color: $COLOR_LIGHTPINK;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  color: $COLOR_DARKBLUE;
+  strong {
+    font-weight: bold;
+  }
+}
+
+.grid-services {
+  .grid-service-container {
+    max-width: 862px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      .image{
+        margin-bottom: 26px;
+      }
+    }
+  }
+  .grid-service-item {
+    padding: 94px 0 54px;
+    &:nth-child(even) {
+      background-color: $COLOR_LIGHTGRAY;
+      .grid-service-container {
+        flex-direction: row-reverse;
+      }
+      @media screen and (max-width: 768px) {
+        .grid-service-container {
+          flex-direction: column-reverse;
+          .image{
+            margin-top: 26px;
+          }
+        }
+      }
+    }
+  }
+  .image {
+    svg {
+      width: 280px;
+      height: 234.84px;
+      display: block;
+    }
+  }
+  .content {
+    width: 368px;
+    .labels {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .label-title {
+      color: $COLOR_DARKBLUE;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 44px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .label {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 0;
+      justify-content: center;
+      .label-item:not(:last-child) {
+        margin-right: 32px;
+      }
+      .label-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .label-text {
+          color: $COLOR_66666;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+          margin-bottom: 16px;
+        }
+        .label-bg {
+          background-color: $COLOR_DARKBLUE;
+          padding: 8px 16px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          color: $COLOR_WHITE;
+          border-radius: 8px;
+          width: fit-content;
+        }
+      }
+    }
+  }
+}
+
+.grid-service-title {
+  margin-top: 77.78px;
+  color: $COLOR_DARKBLUE;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
