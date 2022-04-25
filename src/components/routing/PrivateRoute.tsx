@@ -1,5 +1,5 @@
-import { ComponentType, createElement, ReactNode } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { ComponentType, createElement } from "react";
+import { Redirect, Route } from "react-router-dom";
 import { AUTH_PATH } from "./constants";
 
 interface IContentRouteProps {
