@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+### Tech stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Typescript, React, react-router, Axios
+Development environment
+[https://daoukiwoom-interview.vercel.app/](https://daoukiwoom-interview.vercel.app/)
 
-## Available Scripts
+### 1. Repository setup
 
-In the project directory, you can run:
+> npm install
 
-### `npm start`
+This will install all necessary packages and perform initial setup for development on the local environment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 2. Local development server
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> npm run start
 
-### `npm test`
+Creates a development server with hot reloading on the local system.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Testing
 
-### `npm run build`
+> npm run test
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This will run Jest in --watch mode
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> npm run test-coverage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This tells Jest to perform all tests and generate a coverage report in the /coverage folder.
 
-### `npm run eject`
+### 4. Code building
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> npm run build
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Performs a production build (minification, no .map files). Files will be output to the /dist folder.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 5. Production deployment
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+deploy with vercel
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Environment variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Local development
+
+`.env` - You can save any custom parameters in this file for local builds. This file is ignored during commits.
+
+`.env.example` - You can see environment sample
+
+### Folder Structure
+```
+src/
+  assets/
+  common/
+  components/
+    <shared-component>/
+  pages/
+    <app-page>/
+```
+
+`assets` - Static assets such as images. videos or xml files should be placed here. This folder will be copied into the /dist folder during building
+
+`common` - useful shared helper functions or libraries should reside here.
+
+`components` - shared react components used throughout the app.
+
+`pages` - individual sections of the app
+
+### Tests
+
+All tests should be placed in a `__tests__` folder in the respective folder of the function or component being tested on resides.
