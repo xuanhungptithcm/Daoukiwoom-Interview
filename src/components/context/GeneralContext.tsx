@@ -1,4 +1,5 @@
 import { PropsWithChildren, ReactElement } from "react";
+import ApiHandler from "../../api/ApiHandler";
 
 import { GeneralDataContext, initialGeneralData } from "./constants";
 import ContextProvider from "./ContextProvider";
@@ -12,6 +13,7 @@ const GeneralContext = ({
       initialState={initialGeneralData}
       Context={GeneralDataContext}
     >
+      <ApiHandler />
       {children}
     </ContextProvider>
   );

@@ -1,7 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotFound should render correct 1`] = `
-<Fragment>
-  404 Page not found
-</Fragment>
+<div
+  className="not-found"
+>
+  <div
+    className="image"
+  >
+    <img
+      alt=""
+      src="assets/icons/jpg/404.jpg"
+    />
+  </div>
+  <div
+    className="title"
+  >
+    Oops!
+  </div>
+  <div
+    className="description"
+  >
+    We can’t seem to find the page you are looking for
+  </div>
+  <div
+    className="help-link"
+  >
+    <Link
+      to="/dashboard"
+    >
+      Go back to home
+    </Link>
+  </div>
+</div>
 `;

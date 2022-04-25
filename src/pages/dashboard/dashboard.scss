@@ -2,6 +2,22 @@
 
 .lading-header {
   display: flex;
+  @media screen and (max-width: 1150px) {
+    .left-menu{
+      flex-basis: 325px;
+    }
+    .right-menu{
+      width: calc(100vw - 325px);
+    }
+    h1.title{
+      font-size: 36px;
+      line-height: 46px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
 }
 
 .left-menu {
@@ -22,7 +38,6 @@ h1.title {
     line-height: 76px;
     letter-spacing: 0.01em;
     color: #181949;
-    text-align: left;
     margin: 0;
   }
   p:first-child {
@@ -398,6 +413,18 @@ h1.title {
   }
   .contact-item {
     padding: 33px 40.81px 50px;
+  }
+  @media screen and (max-width: 1452px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 889px) {
+    flex-direction: column;
+    .contact-item {
+      width: 100%;
+      &:not(:last-child) {
+        border-bottom: 2px solid $COLOR_BORDER_CONTACT;
+      }
+    }
   }
 }
 

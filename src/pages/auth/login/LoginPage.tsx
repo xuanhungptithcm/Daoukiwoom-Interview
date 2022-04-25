@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useLogin } from "../../../api/hooks";
 import { useIsUserLogIn } from "../../../components/context/hooks";
 import { IUserLoginProps } from "../../../components/context/types";
-import { AUTH_PATH } from "../../../components/routing/constants";
+import { AUTH_PATH, PRIVATE_PATH } from "../../../components/routing/constants";
 import validateEmail from "../../../helpers/validateEmail";
 import validatePassword from "../../../helpers/validatePassword";
 import '../auth.scss';
@@ -18,7 +18,7 @@ const LoginPage = () => {
   const isLogged = useIsUserLogIn();
   const login = useLogin();
   useEffect(() => {
-    if (isLogged) history.push("/dashboard");
+    if (isLogged) history.push(PRIVATE_PATH.DASHBOARD);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLogged]);
 
