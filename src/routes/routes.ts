@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { AUTH_PATH } from '../components/routing/constants';
+import { AUTH_PATH, PRIVATE_PATH } from '../components/routing/constants';
 
 const routes = [
   {
@@ -28,7 +28,7 @@ const routes = [
   },
   {
     key: "e1a7c16e667",
-    path: '/dashboard',
+    path: PRIVATE_PATH.DASHBOARD,
     component: lazy(() => import('../pages/dashboard/Dashboard')),
     requiredAuthen: true,
     exact: true,

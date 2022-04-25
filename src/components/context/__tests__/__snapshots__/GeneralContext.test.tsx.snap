@@ -35,5 +35,7 @@ exports[`GeneralContext should render properly 1`] = `
       },
     }
   }
-/>
+>
+  <ApiHandler />
+</ContextProvider>
 `;

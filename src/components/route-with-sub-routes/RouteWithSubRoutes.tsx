@@ -1,9 +1,3 @@
-/**
- *
- * RouteWithSubRoutes
- *
- */
-
 import React from "react";
 import { Route } from "react-router-dom";
 import { IRouteProps } from "../../routes/type";

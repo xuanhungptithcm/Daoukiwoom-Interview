@@ -4,3 +4,7 @@ export enum AUTH_PATH {
   AUTH_PAGE = "/auth",
   NOT_FOUND = "/404"
 }
+
+export enum PRIVATE_PATH {
+  DASHBOARD = "/dashboard"
+}

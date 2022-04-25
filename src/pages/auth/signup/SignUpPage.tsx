@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useIsUserLogIn } from "../../../components/context/hooks";
-import { AUTH_PATH } from "../../../components/routing/constants";
+import { AUTH_PATH, PRIVATE_PATH } from "../../../components/routing/constants";
 import '../auth.scss';
 
 const SignUpPage = () => {
@@ -9,7 +9,7 @@ const SignUpPage = () => {
   const isLogged = useIsUserLogIn();
 
   useEffect(() => {
-    if (isLogged) history.push("/dashboard");
+    if (isLogged) history.push(PRIVATE_PATH.DASHBOARD);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLogged]);
 
