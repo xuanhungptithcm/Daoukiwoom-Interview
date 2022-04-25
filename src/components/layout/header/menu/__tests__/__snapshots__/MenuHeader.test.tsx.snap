@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuHeader should properly render 1`] = `
+<div
+  className="container-menu-header"
+>
+  <div
+    className="menu-header"
+  >
+    <div
+      className="logo"
+    >
+      <Link
+        to="/"
+      >
+        <ReactComponent />
+      </Link>
+    </div>
+    <ul
+      className="menus"
+    >
+      <li
+        className="menu-item active"
+      >
+        <ReactComponent />
+        <a
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        className="menu-item"
+      >
+        <a
+          href="/home"
+        >
+          Auto Homepage
+        </a>
+      </li>
+      <li
+        className="menu-item"
+      >
+        <a
+          href="/sales"
+        >
+          Sales
+        </a>
+      </li>
+      <li
+        className="menu-item"
+      >
+        <a
+          href="/cmr"
+        >
+          CRM
+        </a>
+      </li>
+      <li
+        className="menu-item"
+      >
+        <a
+          href="/electronic-office"
+        >
+          Electronic office
+        </a>
+      </li>
+      <li
+        className="menu-item"
+      >
+        <a
+          href="/cloud-erp"
+        >
+          Cloud ERP
+        </a>
+      </li>
+      <li
+        className="menu-item"
+      >
+        <a
+          href="/ssl"
+        >
+          SSL
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

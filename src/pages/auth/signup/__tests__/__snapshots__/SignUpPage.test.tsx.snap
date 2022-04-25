@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpPage should render correct 1`] = `
+<Fragment>
+  <div
+    className="login-form"
+  >
+    <div
+      className="left-form"
+    >
+      <h1
+        className="welcome"
+      >
+        Register to use our service !
+      </h1>
+    </div>
+    <div
+      className="right-form"
+    >
+      <div
+        className="formCenter"
+      >
+        <form
+          className="formFields"
+          onSubmit={[Function]}
+        >
+          <div
+            className="formField"
+          >
+            <div
+              className="formField"
+            >
+              <label
+                className="formFieldLabel"
+                htmlFor="first-name"
+              >
+                First Name
+              </label>
+              <input
+                autoComplete="off"
+                className="formFieldInput"
+                id="first-name"
+                name="first-name"
+                placeholder="Enter your first name"
+                type="text"
+              />
+            </div>
+            <div
+              className="formField"
+            >
+              <label
+                className="formFieldLabel"
+                htmlFor="last-name"
+              >
+                Last Name
+              </label>
+              <input
+                autoComplete="off"
+                className="formFieldInput"
+                id="last-name"
+                name="last-name"
+                placeholder="Enter your last name"
+                type="text"
+              />
+            </div>
+            <label
+              className="formFieldLabel"
+              htmlFor="email"
+            >
+              E-Mail Address
+            </label>
+            <input
+              autoComplete="off"
+              className="formFieldInput"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              type="email"
+            />
+          </div>
+          <div
+            className="formField"
+          >
+            <label
+              className="formFieldLabel"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              autoComplete="off"
+              className="formFieldInput"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              type="password"
+            />
+          </div>
+          <div
+            className="buttons"
+          >
+            <button
+              className="btn-login"
+              type="submit"
+            >
+              Sign Up
+            </button>
+          </div>
+          <p
+            className="register-link"
+          >
+            Have an account? 
+            <Link
+              to="/login"
+            >
+              Login
+            </Link>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</Fragment>
+`;

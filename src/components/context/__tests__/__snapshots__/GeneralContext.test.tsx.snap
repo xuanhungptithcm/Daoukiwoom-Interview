@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GeneralContext should render properly 1`] = `
+<ContextProvider
+  Context={
+    Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": Array [],
+      "_currentValue2": Array [],
+      "_defaultValue": null,
+      "_globalName": null,
+      "_threadCount": 0,
+    }
+  }
+  initialState={
+    Object {
+      "isLoggedIn": false,
+      "userInfo": Object {
+        "avatar": "",
+        "createdAt": "",
+        "id": "",
+        "name": "",
+        "password": "",
+        "username": "",
+      },
+    }
+  }
+/>
+`;

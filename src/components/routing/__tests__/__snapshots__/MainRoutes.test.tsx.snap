@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainRoutes should properly render with authorized 1`] = `
+<Switch>
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={true}
+    isAuthorized={true}
+    key="b76e1a7c16e"
+    path="/login"
+    requiredAuthen={false}
+  />
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={true}
+    isAuthorized={true}
+    key="76e1a7c16e6"
+    path="/"
+    requiredAuthen={false}
+  />
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={true}
+    isAuthorized={true}
+    key="6e1a7c16e66"
+    path="/signup"
+    requiredAuthen={false}
+  />
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={true}
+    isAuthorized={true}
+    key="e1a7c16e667"
+    path="/dashboard"
+    requiredAuthen={true}
+  />
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={false}
+    isAuthorized={true}
+    key="1a7c16e6678"
+    path="*"
+    requiredAuthen={false}
+  />
+</Switch>
+`;
+
+exports[`MainRoutes should properly render with no authorized 1`] = `
+<Switch>
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={true}
+    isAuthorized={false}
+    key="b76e1a7c16e"
+    path="/login"
+    requiredAuthen={false}
+  />
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={true}
+    isAuthorized={false}
+    key="76e1a7c16e6"
+    path="/"
+    requiredAuthen={false}
+  />
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={true}
+    isAuthorized={false}
+    key="6e1a7c16e66"
+    path="/signup"
+    requiredAuthen={false}
+  />
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={true}
+    isAuthorized={false}
+    key="e1a7c16e667"
+    path="/dashboard"
+    requiredAuthen={true}
+  />
+  <RouteWithSubRoutes
+    component={
+      Object {
+        "$$typeof": Symbol(react.lazy),
+        "_init": [Function],
+        "_payload": Object {
+          "_result": [Function],
+          "_status": -1,
+        },
+      }
+    }
+    exact={false}
+    isAuthorized={false}
+    key="1a7c16e6678"
+    path="*"
+    requiredAuthen={false}
+  />
+</Switch>
+`;
