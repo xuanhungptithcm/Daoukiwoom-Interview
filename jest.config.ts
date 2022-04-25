@@ -10,7 +10,6 @@ const config = {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
     "\\.svg$": "<rootDir>/src/svgTransform.js",
-
   },
   snapshotSerializers: ["enzyme-to-json/serializer"],
   setupFilesAfterEnv: ["<rootDir>/src/test-setup.js"],
