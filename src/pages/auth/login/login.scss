@@ -1,0 +1,77 @@
+@import "./../../../styles/variables";
+
+.login-form {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-form {
+  background-color: $COLOR_WHITE;
+  flex-basis: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .welcome {
+    color: $COLOR_DARKBLUE;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 76px;
+    letter-spacing: 0.01em;
+  }
+}
+.right-form {
+  background-color: $COLOR_RIGHT_LOGIN;
+  flex-basis: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formCenter {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.formField {
+  margin-bottom: 40px;
+}
+.formFieldLabel {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: $COLOR_WHITE;
+  font-weight: 500;
+}
+.formFieldInput {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: $COLOR_WHITE;
+  outline: none;
+  border-bottom: 1px solid $COLOR_WHITE;
+  font-size: 1em;
+  font-weight: 300;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.btn-login {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid $COLOR_RIGHT_LOGIN;
+  border-radius: 25px;
+  padding: 15px 70px;
+  font-size: 20px;
+  font-weight: 500;
+  color: $COLOR_RIGHT_LOGIN;
+  cursor: pointer;
+}
