@@ -2,15 +2,16 @@ import { ReactElement } from "react";
 import { ReactComponent as LogoSVG } from "../../../../assets/icons/svg/logo.svg";
 import { ReactComponent as HomeIconSVG } from "../../../../assets/icons/svg/home.svg";
 import "./menuHeader.scss";
+import { Link } from "react-router-dom";
 
 const MenuHeader = (): ReactElement => {
   return (
     <div className="container-menu-header">
       <div className="menu-header">
         <div className="logo">
-          <a href="#">
+          <Link to="/">
             <LogoSVG />
-          </a>
+          </Link>
         </div>
         <ul className="menus">
           <li className="menu-item active">

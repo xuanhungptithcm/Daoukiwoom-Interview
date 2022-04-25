@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage should render correct 1`] = `
+<Fragment>
+  <div
+    className="login-form"
+  >
+    <div
+      className="left-form"
+    >
+      <h1
+        className="welcome"
+      >
+        Welcome back!
+      </h1>
+    </div>
+    <div
+      className="right-form"
+    >
+      <div
+        className="formCenter"
+      >
+        <form
+          className="formFields"
+          onSubmit={[Function]}
+        >
+          <div
+            className="formField"
+          >
+            <label
+              className="formFieldLabel"
+              htmlFor="email"
+            >
+              E-Mail Address
+            </label>
+            <input
+              autoComplete="off"
+              className="formFieldInput"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              type="email"
+            />
+            <p
+              className="error-message"
+            />
+          </div>
+          <div
+            className="formField"
+          >
+            <label
+              className="formFieldLabel"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              autoComplete="off"
+              className="formFieldInput"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              type="password"
+            />
+            <p
+              className="error-message"
+            />
+          </div>
+          <div
+            className="buttons"
+          >
+            <button
+              className="btn-login"
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+          <p
+            className="register-link"
+          >
+            Don't have an account?
+             
+            <Link
+              to="/signup"
+            >
+              Sign Up
+            </Link>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</Fragment>
+`;
