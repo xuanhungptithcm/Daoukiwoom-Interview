@@ -22,3 +22,7 @@ export interface IGeneralData {
 export type IGenericProps = {
   // Property by default EMPTY
 };
+export interface IUserLoginProps {
+  email: string;
+  password: string;
+}

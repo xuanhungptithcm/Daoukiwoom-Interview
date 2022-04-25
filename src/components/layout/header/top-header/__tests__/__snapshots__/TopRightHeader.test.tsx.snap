@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopRightHeader should properly render 1`] = `
+<div
+  className="container-top-header"
+>
+  <div
+    className="top-menu"
+  >
+    <ul
+      className="menus"
+    >
+      <li
+        className="menu-item"
+      >
+        <span>
+          EN
+        </span>
+        <ReactComponent />
+      </li>
+      <li
+        className="menu-item"
+      >
+        <span>
+          Company
+        </span>
+        <ReactComponent />
+      </li>
+      <li
+        className="menu-item"
+      >
+        <span>
+          Partner Market Place
+        </span>
+        <ReactComponent />
+      </li>
+    </ul>
+  </div>
+</div>
+`;

@@ -1,4 +1,4 @@
-@import "./../../../styles/variables";
+@import "./../../styles/variables";
 
 .login-form {
   width: 100vw;
@@ -24,6 +24,9 @@
     font-size: 36px;
     line-height: 76px;
     letter-spacing: 0.01em;
+    text-transform: uppercase;
+    max-width: 90%;
+    text-align: center;
   }
 }
 .right-form {
@@ -43,6 +46,9 @@
 }
 .formField {
   margin-bottom: 40px;
+  input{
+    color: $COLOR_WHITE!important;
+  }
 }
 .formFieldLabel {
   display: block;
@@ -74,4 +80,19 @@
   font-weight: 500;
   color: $COLOR_RIGHT_LOGIN;
   cursor: pointer;
+}
+
+.register-link {
+  margin-top: 16px;
+  color: $COLOR_WHITE;
+  font-size: 16px;
+  text-align: center;
+  a{
+    color: $COLOR_PINK;
+  }
+}
+.error-message{
+  color: $COLOR_DANGER;
+  margin-top: 10px;
+  font-size: 14px;
 }
