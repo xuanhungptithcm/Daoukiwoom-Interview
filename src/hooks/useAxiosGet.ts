@@ -12,7 +12,7 @@ export const useAxiosGet = <T>(
   const [getError, setGetError] = useState<Nullable<AxiosError>>(null);
 
   useEffect(() => {
-    if (!url) {
+    if (!url || key === 0) {
       setResponse(null);
       setGetError(null);
 

@@ -1,7 +1,5 @@
-import { useLocalCategoryDetailApi } from "./hooks";
-
 const ApiHandler = (): null => {
-  useLocalCategoryDetailApi();
+  // to call API when first loading page
   return null;
 };
 

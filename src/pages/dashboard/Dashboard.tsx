@@ -6,7 +6,51 @@ import { ReactComponent as HrAdminIconSVG } from "../../assets/icons/svg/hr-admi
 import { ReactComponent as SalesIconSVG } from "../../assets/icons/svg/sales.svg";
 import { ReactComponent as CustomerIconSVG } from "../../assets/icons/svg/customer.svg";
 import { ReactComponent as SecurityIconSVG } from "../../assets/icons/svg/security.svg";
+import { ReactComponent as CostSymbolIconSVG } from "../../assets/icons/svg/cost-symbol.svg";
+import { useMemo } from "react";
 const Dashboard = () => {
+  const listCost = useMemo(
+    () => [
+      {
+        id: 1,
+        title: "Free Test",
+        description: "Organize across all apps by hand",
+        value: "0",
+        isBorder: false,
+        isHasBg: false,
+        isFree: true,
+      },
+      {
+        id: 2,
+        title: "Low Price",
+        description: "Monthly Fixed Amount",
+        value: "200.000",
+        isBorder: false,
+        isHasBg: false,
+        isFree: false,
+      },
+      {
+        id: 3,
+        title: "Easy Using Methods",
+        description: "Various Manuals",
+        value: "200.000",
+        isBorder: true,
+        isHasBg: false,
+        isFree: false,
+      },
+      {
+        id: 4,
+        title: "Verified IT Service",
+        description: "On sale in 4 countries",
+        value: "300.000",
+        isBorder: false,
+        isHasBg: true,
+        isFree: false,
+      },
+    ],
+    []
+  );
+
   return (
     <div className="dashboard">
       <div className="lading-header">
@@ -200,6 +244,65 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="costs">
+        <div className="costs-container">
+          {listCost.map(
+            ({ id, description, isBorder, isHasBg, title, value, isFree }) => (
+              <div
+                className={`cost-item ${isBorder ? "isBorder" : ""} ${
+                  isHasBg ? "isHasBg" : ""
+                } ${isFree ? "isFree" : ""}`}
+                key={id}
+              >
+                <h3 className="cost-title">{title}</h3>
+                <p className="cost-description">{description}</p>
+                <div className="cost-per-month">
+                  <div className="cost-value">{value}</div>
+                  <div className="cost-unit">
+                    <div className="cost-unit__symbol">
+                      <CostSymbolIconSVG />
+                    </div>
+                    <div className="cost-unit__time">Per Month</div>
+                  </div>
+                </div>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+      <div className="contacts">
+        <div className="contact-container">
+          <div className="contact-item">
+            <h3 className="contact-title">Vietnam Office</h3>
+            <p className="contact-address">
+              14F, APtower, Dien Bien Phu street, district 3, Ho Chi Minh city
+            </p>
+            <p className="contact-business">Business resignation: 0315421202</p>
+            <p className="contact-phone-email">
+              <span className="contact-phone">Tel: 028-3520-2367</span>
+              <span className="contact-email">sales@dkinno.com</span>
+            </p>
+            <p className="contact-copyright">
+              Copyright 2021 DaouKiwoom Innovation C0., Ltd
+            </p>
+          </div>
+          <div className="contact-item">
+            <h3 className="contact-title">Indonesia Office</h3>
+            <p className="contact-address">
+              Menara Mandiri II, Jl. jend. Sudirman No.54-55, South Jakarta, DKI
+              Jakarta 12190, Indonsia
+            </p>
+            <p className="contact-business">Tel: +62-21-5082-0038</p>
+          </div>
+          <div className="contact-item">
+            <h3 className="contact-title">Korea Office</h3>
+            <p className="contact-address">
+              5th Fl, C-dong, PDC, 242, Pangyo-ro, Bundang-gu, Seongnam-si,
+              Gyeonggi-do, Korea
+            </p>
           </div>
         </div>
       </div>

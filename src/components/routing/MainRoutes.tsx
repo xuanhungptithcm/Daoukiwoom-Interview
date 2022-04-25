@@ -8,6 +8,8 @@ import { AUTH_PATH } from "./constants";
 
 const Routes = (): ReactElement => {
   const isLogged = useIsUserLogIn();
+  console.log("🚀 ~ file: MainRoutes.tsx ~ line 11 ~ Routes ~ isLogged", isLogged)
+  
   return (
     <BrowserRouter basename="">
       <Switch>
@@ -18,7 +20,7 @@ const Routes = (): ReactElement => {
             <Redirect to={AUTH_PATH.LOGIN_PAGE} />
           </Route>
         )}
-        <BasePage />
+        <BasePage isLogged={isLogged} />
         <Redirect from="*" to={AUTH_PATH.NOT_FOUND} />
       </Switch>
     </BrowserRouter>

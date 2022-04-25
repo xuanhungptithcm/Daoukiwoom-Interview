@@ -20,6 +20,5 @@ export const useIsUserLogIn = () => {
 
 export const useUserInfo = () => {
   const { userInfo } = useGeneralContext();
-
   return useMemo(() => userInfo, [userInfo]);
 };

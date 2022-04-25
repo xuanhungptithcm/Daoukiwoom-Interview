@@ -10,7 +10,7 @@ export const initialSetter: React.Dispatch<React.SetStateAction<unknown>> =
   };
 
 export const initialGeneralData: IGeneralData = {
-  isLoggedIn: true,
+  isLoggedIn: false,
   userInfo: {
     createdAt: "",
     name: "",

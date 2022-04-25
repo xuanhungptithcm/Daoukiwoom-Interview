@@ -1,23 +1,19 @@
-@import "../../../../styles/color";
+@import "../../../../styles/_variables";
 .container-top-header {
   position: absolute;
   z-index: 1;
   width: 100%;
   top: 0;
-  left: 0;
   background-color: $COLOR_DARKBLUE;
 }
 .top-menu {
-  width: 90%;
-  margin: 0 auto;
+  width: $SIZE_CONTAINER;
+  margin-left: 81px;
   display: flex;
   list-style-type: none;
   align-items: center;
   justify-content: flex-end;
   height: 36px;
-  // position: absolute;
-  // top: 0;
-  // right: 0;
   overflow: hidden;
   .menus {
     display: flex;
