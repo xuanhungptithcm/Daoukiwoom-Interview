@@ -11,20 +11,20 @@ const routes = [
     isAuthorized: false,
   },
   {
-    key: "76e1a7c16e6",
-    path: "/",
-    component: lazy(() => import('../pages/auth/login/LoginPage')),
-    requiredAuthen: false,
-    exact: true,
-    isAuthorized: false,
-  },
-  {
     key: "6e1a7c16e66",
     path: AUTH_PATH.SIGNUP_PAGE,
     component: lazy(() => import('../pages/auth/signup/SignUpPage')),
     requiredAuthen: false,
     exact: true,
     isAuthorized: false,
+  },
+  {
+    key: "76e1a7c16e6",
+    path: "",
+    component: lazy(() => import('../pages/dashboard/Dashboard')),
+    requiredAuthen: true,
+    exact: true,
+    isAuthorized: true,
   },
   {
     key: "e1a7c16e667",

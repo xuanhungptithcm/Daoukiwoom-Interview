@@ -18,6 +18,9 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
   .welcome {
     color: $COLOR_DARKBLUE;
     font-weight: 700;
@@ -37,6 +40,9 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 600px) {
+    flex-basis: 100%;
+  }
 }
 
 .formCenter {

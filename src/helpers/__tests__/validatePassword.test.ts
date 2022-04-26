@@ -2,9 +2,9 @@ import validatePassword from "../validatePassword";
 
 describe('validatePassword', () => {
   test('should valid password', () => {
-    expect(validatePassword('12345678abc')).toEqual(true);
-    expect(validatePassword('1234567a')).toEqual(true);
-    expect(validatePassword('aaabbbccc123')).toEqual(true);
+    expect(validatePassword('T@tas010110bdefewfewfew')).toEqual(true);
+    expect(validatePassword('aaaaBB123_')).toEqual(true);
+    expect(validatePassword('___aaaa___bbbbb____C_1')).toEqual(true);
   });
   test('should invalid password', () => {
     expect(validatePassword('')).toEqual(false);

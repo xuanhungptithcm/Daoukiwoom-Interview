@@ -6,7 +6,7 @@ import { IUserLoginProps } from "../../../components/context/types";
 import { AUTH_PATH, PRIVATE_PATH } from "../../../components/routing/constants";
 import validateEmail from "../../../helpers/validateEmail";
 import validatePassword from "../../../helpers/validatePassword";
-import '../auth.scss';
+import "../auth.scss";
 
 const LoginPage = () => {
   const [error, setError] = useState({
@@ -31,7 +31,7 @@ const LoginPage = () => {
     const email = target.email.value; // typechecks!
     const password = target.password.value; // typechecks!
 
-    if (!validateForm({ email, password })) return;
+    if (error.email || error.password) return;
     if (!isLoading) {
       login({
         email,
@@ -41,36 +41,42 @@ const LoginPage = () => {
     }
   };
 
-  const validateForm = ({ email, password }: IUserLoginProps) => {
-    let isValid = true;
-    if (!validateEmail(email)) {
-      setError((prev) => ({
-        ...prev,
-        email: "Email not valid",
-      }));
-      isValid = false;
-    } else {
-      setError((prev) => ({
-        ...prev,
-        email: "",
-      }));
+
+  const handleFormOnChange = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    const target = e.target as typeof e.target & {
+      name: string;
+      value: string;
+    };
+    if(target.name === 'email') {
+      if (!validateEmail(target.value)) {
+        setError((prev) => ({
+          ...prev,
+          email: "Email not valid",
+        }));
+      } else {
+        setError((prev) => ({
+          ...prev,
+          email: "",
+        }));
+      }
     }
-    if (!validatePassword(password)) {
-      setError((prev) => ({
-        ...prev,
-        password:
-          "Password must minimum of eight characters, at least one letter, one number",
-      }));
-      isValid = false;
-    } else {
-      setError((prev) => ({
-        ...prev,
-        password: "",
-      }));
+    if(target.name === 'password') {
+      if (!validatePassword(target.value)) {
+        setError((prev) => ({
+          ...prev,
+          password:
+            "Password must At least One Upper Case Character, At least one Lower Case character, At least one digit, At least one symbol/special character @$!%*#?&^_- Minimum 8 characters/digits",
+        }));
+      } else {
+        setError((prev) => ({
+          ...prev,
+          password: "",
+        }));
+      }
     }
 
-    return isValid;
-  };
+  }
   return (
     <>
       <div className="login-form">
@@ -79,7 +85,7 @@ const LoginPage = () => {
         </div>
         <div className="right-form">
           <div className="formCenter">
-            <form className="formFields" onSubmit={handleLogin}>
+            <form className="formFields" onSubmit={handleLogin} onChange={handleFormOnChange}>
               <div className="formField">
                 <label className="formFieldLabel" htmlFor="email">
                   E-Mail Address
