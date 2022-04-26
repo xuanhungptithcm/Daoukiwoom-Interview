@@ -1,9 +1,6 @@
 
 const validatePassword = (password: string = '') => {
-  return !!String(password)
-    .toLowerCase()
-    .match(
-      /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-    );
+  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/;
+  return !!String(password).match(regex);
 }
 export default validatePassword;
