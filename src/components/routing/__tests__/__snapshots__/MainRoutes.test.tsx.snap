@@ -32,8 +32,8 @@ exports[`MainRoutes should properly render with authorized 1`] = `
     }
     exact={true}
     isAuthorized={true}
-    key="76e1a7c16e6"
-    path="/"
+    key="6e1a7c16e66"
+    path="/signup"
     requiredAuthen={false}
   />
   <RouteWithSubRoutes
@@ -49,9 +49,9 @@ exports[`MainRoutes should properly render with authorized 1`] = `
     }
     exact={true}
     isAuthorized={true}
-    key="6e1a7c16e66"
-    path="/signup"
-    requiredAuthen={false}
+    key="76e1a7c16e6"
+    path=""
+    requiredAuthen={true}
   />
   <RouteWithSubRoutes
     component={
@@ -122,8 +122,8 @@ exports[`MainRoutes should properly render with no authorized 1`] = `
     }
     exact={true}
     isAuthorized={false}
-    key="76e1a7c16e6"
-    path="/"
+    key="6e1a7c16e66"
+    path="/signup"
     requiredAuthen={false}
   />
   <RouteWithSubRoutes
@@ -139,9 +139,9 @@ exports[`MainRoutes should properly render with no authorized 1`] = `
     }
     exact={true}
     isAuthorized={false}
-    key="6e1a7c16e66"
-    path="/signup"
-    requiredAuthen={false}
+    key="76e1a7c16e6"
+    path=""
+    requiredAuthen={true}
   />
   <RouteWithSubRoutes
     component={
