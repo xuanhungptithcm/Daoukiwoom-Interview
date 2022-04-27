@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContextProvider should properly render 1`] = `
+<ContextProvider
+  value={
+    Array [
+      Object {},
+      [Function],
+    ]
+  }
+>
+  children
+</ContextProvider>
+`;

@@ -1,7 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-
+// eslint-disable-next-line jest/no-mocks-import
+import { mockUseState } from "../../../../__mocks__/GenericReactMocks";
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -33,6 +34,8 @@ describe("LoginPage", () => {
   test("should render correct", () => {
     const login = jest.fn();
     const handleSubmit = jest.fn();
+    const setError = jest.fn();
+    mockUseState({}, setError);
     (useLogin as any) = () => login;
 
     const { emailInput, emailPassword, loginForm } = setup();
@@ -42,7 +45,19 @@ describe("LoginPage", () => {
     expect(emailPassword.value).toBe("Abc1234456_");
 
     loginForm.onsubmit = handleSubmit;
-    fireEvent.submit(loginForm);
+    fireEvent.submit(loginForm, {
+      target: {
+        email: { value: "xuanhung@gmail.com" },
+        password: { value: "Abc1234456_" },
+      },
+    });
     expect(handleSubmit).toBeCalledTimes(1);
+    fireEvent.submit(loginForm, {
+      target: {
+        email: { value: "xuanhung" },
+        password: { value: "12345678" },
+      },
+    });
+    expect(setError).toBeCalled();
   });
 });

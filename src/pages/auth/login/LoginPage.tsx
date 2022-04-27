@@ -1,80 +1,37 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useLogin } from "../../../api/hooks";
 import { useIsUserLogIn } from "../../../components/context/hooks";
 import { AUTH_PATH, PRIVATE_PATH } from "../../../components/routing/constants";
-import validateEmail from "../../../helpers/validateEmail";
-import validatePassword from "../../../helpers/validatePassword";
 import "../auth.scss";
+import { IMessage, useSubmitForm, useValidateInputForm } from "./hooks";
 
 const LoginPage = () => {
-  const [error, setError] = useState({
+  const history = useHistory();
+  const [error, setError] = useState<IMessage>({
     email: "",
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const history = useHistory();
   const isLogged = useIsUserLogIn();
-  const login = useLogin();
+
+  const validateForm = useValidateInputForm(setError);
+  const submitForm = useSubmitForm(error, isLoading, setIsLoading, setError);
+
   useEffect(() => {
     if (isLogged) history.push(PRIVATE_PATH.DASHBOARD);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLogged]);
 
   const handleLogin = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const target = e.target as typeof e.target & {
-      email: { value: string };
-      password: { value: string };
-    };
-    const email = target.email.value; // typechecks!
-    const password = target.password.value; // typechecks!
-
-    if (error.email || error.password || !email || !password) return;
-    if (!isLoading) {
-      login({
-        email,
-        password,
-      });
-      setIsLoading((prev) => !prev);
-    }
+    submitForm(e);
   };
 
   const handleFormOnChange = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const target = e.target as typeof e.target & {
-      name: string;
-      value: string;
-    };
-
-    if (target.name === "email") {
-      if (!validateEmail(target.value)) {
-        setError((prev) => ({
-          ...prev,
-          email: "Email not valid",
-        }));
-      } else {
-        setError((prev) => ({
-          ...prev,
-          email: "",
-        }));
-      }
-    }
-    if (target.name === "password") {
-      if (!validatePassword(target.value)) {
-        setError((prev) => ({
-          ...prev,
-          password:
-            "Password must At least One Upper Case Character \n At least one Lower Case character \n At least one digit \n At least one symbol/special character @$!%*#?&^_- \n Minimum 8 characters/digits",
-        }));
-      } else {
-        setError((prev) => ({
-          ...prev,
-          password: "",
-        }));
-      }
-    }
+    validateForm(e);
   };
+
   return (
     <>
       <div className="login-form">
@@ -125,6 +82,7 @@ const LoginPage = () => {
                   className="btn-login"
                   aria-label="btn-login"
                   type="submit"
+                  disabled={isLoading}
                 >
                   Login
                 </button>
