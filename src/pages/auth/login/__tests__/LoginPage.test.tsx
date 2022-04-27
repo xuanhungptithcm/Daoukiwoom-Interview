@@ -20,7 +20,7 @@ describe("LoginPage", () => {
     );
     const emailInput = screen.getByLabelText<IInputType>("email-input");
     const emailPassword = screen.getByLabelText<IInputType>("password-input");
-    const loginForm = screen.getByLabelText<IInputType>("login-form");
+    const loginForm = screen.getByLabelText<any>("login-form");
 
     return {
       ...utils,
@@ -32,19 +32,17 @@ describe("LoginPage", () => {
 
   test("should render correct", () => {
     const login = jest.fn();
+    const handleSubmit = jest.fn();
     (useLogin as any) = () => login;
 
     const { emailInput, emailPassword, loginForm } = setup();
-    console.log(emailInput);
-    fireEvent.change(emailInput, { target: { value: "user01" } });
-    expect(emailInput.value).toBe("user01");
-    fireEvent.change(emailPassword, { target: { value: "123456789" } });
-    expect(emailPassword.value).toBe("123456789");
+    fireEvent.change(emailInput, { target: { value: "xuanhung@gmail.com" } });
+    expect(emailInput.value).toBe("xuanhung@gmail.com");
+    fireEvent.change(emailPassword, { target: { value: "Abc1234456_" } });
+    expect(emailPassword.value).toBe("Abc1234456_");
 
-    fireEvent.submit(loginForm, { target: {
-      email: { value: "xuanhung@gmail.com" },
-      password: { value: "Abc123123123_" },
-    } });
-    expect(login).toBeCalledTimes(0);
+    loginForm.onsubmit = handleSubmit;
+    fireEvent.submit(loginForm);
+    expect(handleSubmit).toBeCalledTimes(1);
   });
 });

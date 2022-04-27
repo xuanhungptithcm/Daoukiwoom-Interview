@@ -46,6 +46,7 @@ const LoginPage = () => {
       name: string;
       value: string;
     };
+
     if (target.name === "email") {
       if (!validateEmail(target.value)) {
         setError((prev) => ({
