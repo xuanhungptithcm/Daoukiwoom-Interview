@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useLogin } from "../../../api/hooks";
 import { useIsUserLogIn } from "../../../components/context/hooks";
-import { IUserLoginProps } from "../../../components/context/types";
 import { AUTH_PATH, PRIVATE_PATH } from "../../../components/routing/constants";
 import validateEmail from "../../../helpers/validateEmail";
 import validatePassword from "../../../helpers/validatePassword";
@@ -31,7 +30,7 @@ const LoginPage = () => {
     const email = target.email.value; // typechecks!
     const password = target.password.value; // typechecks!
 
-    if (error.email || error.password) return;
+    if (error.email || error.password || !email || !password) return;
     if (!isLoading) {
       login({
         email,
@@ -41,14 +40,14 @@ const LoginPage = () => {
     }
   };
 
-
   const handleFormOnChange = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
       name: string;
       value: string;
     };
-    if(target.name === 'email') {
+
+    if (target.name === "email") {
       if (!validateEmail(target.value)) {
         setError((prev) => ({
           ...prev,
@@ -61,12 +60,12 @@ const LoginPage = () => {
         }));
       }
     }
-    if(target.name === 'password') {
+    if (target.name === "password") {
       if (!validatePassword(target.value)) {
         setError((prev) => ({
           ...prev,
           password:
-            "Password must At least One Upper Case Character, At least one Lower Case character, At least one digit, At least one symbol/special character @$!%*#?&^_- Minimum 8 characters/digits",
+            "Password must At least One Upper Case Character \n At least one Lower Case character \n At least one digit \n At least one symbol/special character @$!%*#?&^_- \n Minimum 8 characters/digits",
         }));
       } else {
         setError((prev) => ({
@@ -75,8 +74,7 @@ const LoginPage = () => {
         }));
       }
     }
-
-  }
+  };
   return (
     <>
       <div className="login-form">
@@ -85,7 +83,12 @@ const LoginPage = () => {
         </div>
         <div className="right-form">
           <div className="formCenter">
-            <form className="formFields" onSubmit={handleLogin} onChange={handleFormOnChange}>
+            <form
+              className="formFields"
+              aria-label="login-form"
+              onSubmit={handleLogin}
+              onChange={handleFormOnChange}
+            >
               <div className="formField">
                 <label className="formFieldLabel" htmlFor="email">
                   E-Mail Address
@@ -97,6 +100,7 @@ const LoginPage = () => {
                   placeholder="Enter your email"
                   name="email"
                   autoComplete="off"
+                  aria-label="email-input"
                 />
                 <p className="error-message">{error.email}</p>
               </div>
@@ -112,11 +116,16 @@ const LoginPage = () => {
                   placeholder="Enter your password"
                   name="password"
                   autoComplete="off"
+                  aria-label="password-input"
                 />
                 <p className="error-message">{error.password}</p>
               </div>
               <div className="buttons">
-                <button className="btn-login" type="submit">
+                <button
+                  className="btn-login"
+                  aria-label="btn-login"
+                  type="submit"
+                >
                   Login
                 </button>
               </div>
